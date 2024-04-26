@@ -309,7 +309,7 @@ fn main() {
 
     println!("Luminance Factor (Recommended 1):");
     println!(
-        "Different values can result in better variation in some scenarios. Play around with it!"
+        "Lower values can result in better variation in some scenarios. Play around with it!"
     );
     let luminance_factor = user_input_float() as f64;
 
