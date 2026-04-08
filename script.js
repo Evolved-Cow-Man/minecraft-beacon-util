@@ -18,12 +18,8 @@ const colorAccuracyLabel = document.getElementById("colorAccuracyLabel");
 function customEventListener(id, is_checkbox, is_url) {
   const input = document.getElementById(id);
 
-  // initialize settings
-  if (is_checkbox) {
-    settings[id] = Number(input.checked);
-  } else {
-    settings[id] = Number(input.value);
-  }
+  // URL params -> settings -> label
+  // once
 
   // read URL params
   if (is_url) {
@@ -35,6 +31,13 @@ function customEventListener(id, is_checkbox, is_url) {
         input.value = Number(url_params.get(id));
       }
     }
+  }
+
+  // initialize settings
+  if (is_checkbox) {
+    settings[id] = Number(input.checked);
+  } else {
+    settings[id] = Number(input.value);
   }
 
   // initialize label
@@ -50,6 +53,9 @@ function customEventListener(id, is_checkbox, is_url) {
   }
 
   input.addEventListener("input", function () {
+    // settings -> URL params -> label
+    // every time
+
     // update settings
     if (is_checkbox) {
       settings[id] = Number(input.checked);
@@ -70,19 +76,19 @@ function customEventListener(id, is_checkbox, is_url) {
       }
     }
 
+    // update label
+    if (is_checkbox) {
+      if (settings[id]) {
+        label.innerHTML = "yes";
+      } else {
+        label.innerHTML = "no";
+      }
+    } else {
+      label.innerHTML = settings[id];
+    }
+
     updateApp();
   });
-
-  // update label
-  if (is_checkbox) {
-    if (settings[id]) {
-      label.innerHTML = "yes";
-    } else {
-      label.innerHTML = "no";
-    }
-  } else {
-    label.innerHTML = settings[id];
-  }
 
   if (!is_checkbox) {
     input.addEventListener("dblclick", function () {
