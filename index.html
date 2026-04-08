@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Minecraft Beacon Circle & Color Generator</title>
+        <link rel="stylesheet" href="./style.css" />
+        <script src="./pkg/color_accuracy_data.js"></script>
+        <script type="module" src="./script.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="toolbar">
+                <span aria-label="display size">display_size:</span>
+                <span id="displaySizeLabel"></span><span>px</span>
+                <input
+                    type="range"
+                    id="displaySize"
+                    min="1"
+                    max="50"
+                    value="16"
+                    step="0.01"
+                />
+
+                <span aria-label="number of beacons">number_of_beacons:</span>
+                <span id="numberOfBeaconsLabel"></span>
+                <input
+                    type="range"
+                    id="numberOfBeacons"
+                    min="1"
+                    max="512"
+                    value="68"
+                />
+
+                <span aria-label="minimum radius">minimum_radius:</span>
+                <span id="minRadiusLabel"></span>
+                <input
+                    type="range"
+                    id="minRadius"
+                    min="1"
+                    max="200"
+                    value="10"
+                />
+
+                <span aria-label="maximum radius">maximum_radius:</span>
+                <span id="maxRadiusLabel"></span>
+                <input
+                    type="range"
+                    id="maxRadius"
+                    min="1"
+                    max="200"
+                    value="24"
+                />
+
+                <span aria-label="rotation offset">rotation_offset:</span>
+                <span id="rotationOffsetLabel"></span><span>°</span>
+                <input
+                    type="range"
+                    id="rotationOffset"
+                    min="-180"
+                    max="180"
+                    value="0"
+                />
+
+                <span aria-label="lightness">lightness:</span>
+                <span id="lightnessLabel"></span><span>%</span>
+                <input
+                    type="range"
+                    id="lightness"
+                    min="0"
+                    max="100"
+                    value="52"
+                />
+
+                <span aria-label="chroma">chroma:</span>
+                <span id="chromaLabel"></span><span>%</span>
+                <input type="range" id="chroma" min="0" max="100" value="28" />
+
+                <span aria-label="hue offset">hue_offset:</span>
+                <span id="hueOffsetLabel"></span><span>°</span>
+                <input
+                    type="range"
+                    id="hueOffset"
+                    min="-180"
+                    max="180"
+                    value="0"
+                />
+
+                <span aria-label="clockwise hue">clockwise_hue:</span>
+                <span id="clockwiseHueLabel"></span>
+                <input type="checkbox" id="clockwiseHue" />
+
+                <span aria-label="color accuracy">color_accuracy:</span>
+                <span id="colorAccuracyLabel"></span><span>%</span>
+            </div>
+            <div id="app"></div>
+        </div>
+    </body>
+</html>

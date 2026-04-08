@@ -1,10 +1,17 @@
 [package]
-name = "minecraft-beacon-util"
-version = "0.1.0"
-edition = "2021"
+name = "minecraft-beacon"
+version = "2.0.0"
+edition = "2024"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+crate-type = ["cdylib"]
 
 [dependencies]
-oklab = "1.0.1"
-colored = "2.1.0"
+oklab = "1.1.2"
+wasm-bindgen = "0.2.117"
+
+[build-dependencies]
+oklab = "1.1.2"
+
+[profile.dev.build-override]
+opt-level = 3

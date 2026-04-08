@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "Monocraft";
+    src: url("./Monocraft.ttf") format("truetype");
+}
+
+body {
+    font-family: Monocraft;
+    margin: 0;
+}
+
+input {
+    display: block;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 275px auto;
+    height: 100vh;
+}
+
+#toolbar {
+    color: white;
+    background-color: black;
+    padding: 1em;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#app {
+    background-color: rgb(128, 128, 128);
+    position: relative;
+    overflow: auto; /* scroll */
+}
+
+.beacon {
+    position: absolute;
+}
+
+.beacon:hover .tooltip {
+    display: block;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    padding: 0.5em;
+    border: 0.2em solid transparent;
+    border-image-source: url(./frame_modified.png);
+    border-image-slice: 2%; /* it's 100 x 100, 2px */
+    border-image-repeat: stretch;
+    background-color: #100010f0;
+    background-clip: padding-box;
+    color: white;
+}
