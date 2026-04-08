@@ -25,18 +25,6 @@ function customEventListener(id, is_checkbox, is_url) {
     settings[id] = Number(input.value);
   }
 
-  // initialize label
-  const label = document.getElementById(id + "Label");
-  if (is_checkbox) {
-    if (settings[id]) {
-      label.innerHTML = "yes";
-    } else {
-      label.innerHTML = "no";
-    }
-  } else {
-    label.innerHTML = settings[id];
-  }
-
   // read URL params
   if (is_url) {
     const url_params = new URLSearchParams(window.location.search);
@@ -49,6 +37,18 @@ function customEventListener(id, is_checkbox, is_url) {
     }
   }
 
+  // initialize label
+  const label = document.getElementById(id + "Label");
+  if (is_checkbox) {
+    if (settings[id]) {
+      label.innerHTML = "yes";
+    } else {
+      label.innerHTML = "no";
+    }
+  } else {
+    label.innerHTML = settings[id];
+  }
+
   input.addEventListener("input", function () {
     // update settings
     if (is_checkbox) {
@@ -57,17 +57,6 @@ function customEventListener(id, is_checkbox, is_url) {
       settings[id] = Number(input.value);
     }
     console.log("input", id, settings[id]);
-
-    // update label
-    if (is_checkbox) {
-      if (settings[id]) {
-        label.innerHTML = "yes";
-      } else {
-        label.innerHTML = "no";
-      }
-    } else {
-      label.innerHTML = settings[id];
-    }
 
     // write URL params
     if (is_url) {
@@ -83,6 +72,17 @@ function customEventListener(id, is_checkbox, is_url) {
 
     updateApp();
   });
+
+  // update label
+  if (is_checkbox) {
+    if (settings[id]) {
+      label.innerHTML = "yes";
+    } else {
+      label.innerHTML = "no";
+    }
+  } else {
+    label.innerHTML = settings[id];
+  }
 
   if (!is_checkbox) {
     input.addEventListener("dblclick", function () {
