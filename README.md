@@ -4,4 +4,4 @@ update toolchain and libraries:
 * `cargo update`
 
 build used for the web:
-* `./web-build.sh`
+* `chmod +x web-build.sh && ./web-build.sh`
