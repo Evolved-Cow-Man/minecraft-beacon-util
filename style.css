@@ -29,13 +29,15 @@ input {
 }
 
 #app {
-    background-color: rgb(128, 128, 128);
+    background-color: oklab(30% 0 0);
     position: relative;
     overflow: auto; /* scroll */
 }
 
 .beacon {
     position: absolute;
+    outline: 1px solid white;
+    outline-offset: -1px;
 }
 
 .beacon:hover .tooltip {
