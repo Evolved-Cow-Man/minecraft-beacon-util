@@ -3,6 +3,5 @@ update toolchain and libraries:
 * `cargo install wasm-pack`
 * `cargo update`
 
-build:
-* `wasm-pack build --release --target web`
-* `rm pkg/.gitignore`
+build used for the web:
+* `wasm-pack build --release --target web && cargo clean`
