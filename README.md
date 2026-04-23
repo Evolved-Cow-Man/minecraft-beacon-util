@@ -4,4 +4,4 @@ update toolchain and libraries:
 * `cargo update`
 
 build used for the web:
-* `wasm-pack build --release --target web && cargo clean`
+* `./web-build.sh`
